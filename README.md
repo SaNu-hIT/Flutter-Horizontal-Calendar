@@ -10,30 +10,65 @@ For general information about developing packages, see the Dart guide for
 and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
+Flutter Horizontal Date  Picker Library that provides a calendar as a horizontal scolling with center selection 
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+<p>
+ <img src="https://github.com/SaNu-hIT/Flutter-Horizontal-Calendar/blob/main/Screenshot_1647429334.png"/>
+</p>
+## How To Use
 
-## Features
+Import the following package in your dart file
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+```dart
+import 'package:horizontalcalender/horizontalcalender.dart';
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+This version is breaking backwards compatibility
+
+Use the `DatePicker` Widget
 
 ```dart
-const like = 'sample';
+Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: <Widget>[
+      HorizontalCalendar(
+        DateTime.now(),
+        initialSelectedDate: DateTime.now(),
+        selectionColor: Colors.black,
+        selectedTextColor: Colors.white,
+        onDateChange: (date) {
+          // New date selected
+          setState(() {
+            _selectedValue = date;
+          });
+        },
+      ),
+    ],
+)
 ```
 
-## Additional information
+##### Constructor:
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+```dart
+HorizontalCalendar(
+    this.startDate, {
+    Key key,
+    this.width,
+    this.height,
+    this.controller,
+    this.monthTextStyle,
+    this.dayTextStyle,
+    this.dateTextStyle,
+    this.selectedTextColor,
+    this.selectionColor,
+    this.deactivatedColor,
+    this.initialSelectedDate,
+    this.activeDates,
+    this.inactiveDates,
+    this.daysCount,
+    this.onDateChange,
+    this.locale = "en_US",
+}) : super(key: key);
+```
