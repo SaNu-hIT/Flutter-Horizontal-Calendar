@@ -10,10 +10,10 @@ For general information about developing packages, see the Dart guide for
 and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
-Flutter Horizontal Date  Picker Library that provides a calendar as a horizontal scolling with center selection 
+Flutter Horizontal Date  Picker Library that provides a calendar  center selection of items.
 
 <p>
- <img src="https://github.com/SaNu-hIT/Flutter-Horizontal-Calendar/blob/main/Screenshot_1647429334.png"/>
+ <img src="https://github.com/SaNu-hIT/Flutter-Horizontal-Calendar/blob/main/Calendar.jpg"/>
 </p>
 
 
@@ -31,12 +31,10 @@ dependencies:
 Import the following package in your dart file
 
 ```dart
-import 'package:horizontalcalender/horizontalcalender.dart';
+import 'package:horizontalcalendar/horizontalcalendar.dart';
 ```
 
 ## Usage
-
-This version is breaking backwards compatibility
 
 Use the `HorizontalCalendar` Widget
 
