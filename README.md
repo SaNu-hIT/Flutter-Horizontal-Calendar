@@ -15,7 +15,18 @@ Flutter Horizontal Date  Picker Library that provides a calendar as a horizontal
 <p>
  <img src="https://github.com/SaNu-hIT/Flutter-Horizontal-Calendar/blob/main/Screenshot_1647429334.png"/>
 </p>
+
+
 ## How To Use
+
+
+Use this package as a library
+
+```
+dependencies:
+     horizontalcalender: ^0.0.2
+```
+
 
 Import the following package in your dart file
 
@@ -27,36 +38,33 @@ import 'package:horizontalcalender/horizontalcalender.dart';
 
 This version is breaking backwards compatibility
 
-Use the `DatePicker` Widget
+Use the `HorizontalCalendar` Widget
 
 ```dart
-Column(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: <Widget>[
-      HorizontalCalendar(
-        DateTime.now(),
-        initialSelectedDate: DateTime.now(),
-        selectionColor: Colors.black,
-        selectedTextColor: Colors.white,
-        onDateChange: (date) {
-          // New date selected
-          setState(() {
-            _selectedValue = date;
-          });
-        },
-      ),
-    ],
-)
+  @override
+  Widget build(BuildContext context) {
+    final FixedExtentScrollController itemController =
+        FixedExtentScrollController();
+    return Container(
+        height: 200,
+        width: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.all(10.0),
+        child: HorizontalCalendar(DateTime.now(),
+            width: MediaQuery.of(context).size.width*.25,
+            height: 120,
+            selectionColor: Colors.red,
+            itemController: itemController));
+  }
 ```
 
 ##### Constructor:
 
 ```dart
-HorizontalCalendar(
+  HorizontalCalendar(
     this.startDate, {
-    Key key,
-    this.width,
-    this.height,
+    Key? key,
+    this.width = 40,
+    this.height = 80,
     this.controller,
     this.monthTextStyle,
     this.dayTextStyle,
@@ -67,8 +75,11 @@ HorizontalCalendar(
     this.initialSelectedDate,
     this.activeDates,
     this.inactiveDates,
-    this.daysCount,
+    this.daysCount = 500,
     this.onDateChange,
     this.locale = "en_US",
-}) : super(key: key);
+    this.selectedDayStyle,
+    this.selectedDateStyle,
+    required this.itemController,
+  });
 ```

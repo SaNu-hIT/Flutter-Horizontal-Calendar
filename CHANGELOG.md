@@ -1,7 +1,13 @@
-## 0calendar - Release
+## calendar - Release
 
-* A customisable horizontal calendar library
+* Beta version release
 
 ## 0.0.2 - Release
 
 * Bug fixes
+
+
+## 0.0.3 - Release
+
+* More examples and documentation
+

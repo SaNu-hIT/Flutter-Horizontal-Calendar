@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:horizontalcalender/horizontalcalendar.dart';
 
 void main() {
@@ -12,6 +13,15 @@ class ExampleClass extends StatelessWidget {
   Widget build(BuildContext context) {
     final FixedExtentScrollController itemController =
         FixedExtentScrollController();
-    return HorizontalCalendar(DateTime.now(), itemController: itemController);
+    return Container(
+        height: 200,
+        width: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.all(10.0),
+        child: HorizontalCalendar(DateTime.now(),
+            width: MediaQuery.of(context).size.width*.25,
+            height: 120,
+            selectionColor: Colors.red,
+            itemController: itemController));
   }
 }
+
