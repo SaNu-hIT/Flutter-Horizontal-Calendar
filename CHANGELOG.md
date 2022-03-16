@@ -1,3 +1,7 @@
-## 0.0.1 - Release
+## 0calendar - Release
 
-* A custamisable horizontal calendar library
+* A customisable horizontal calendar library
+
+## 0.0.2 - Release
+
+* Bug fixes
