@@ -6,7 +6,7 @@ import 'package:horizontalcalender/date_item_widget.dart';
 
 import 'extra/color.dart';
 import 'extra/style.dart';
-import 'tap.dart';
+import 'listener/tap.dart';
 
 class HorizontalCalendar extends StatefulWidget {
   final DateTime startDate;
@@ -33,7 +33,7 @@ class HorizontalCalendar extends StatefulWidget {
 
   final TextStyle dateTextStyle;
 
-  final DateTime? /*?*/ initialSelectedDate;
+  final DateTime?  initialSelectedDate;
 
   final List<DateTime>? inactiveDates;
 
@@ -81,11 +81,9 @@ class _HorizontalCalendarState extends State<HorizontalCalendar> {
   late final TextStyle selectedDateStyle;
   late final TextStyle selectedMonthStyle;
   late final TextStyle selectedDayStyle;
-
   late final TextStyle deactivatedDateStyle;
   late final TextStyle deactivatedMonthStyle;
   late final TextStyle deactivatedDayStyle;
-
   var itemSelected = 0;
 
   @override
@@ -130,12 +128,9 @@ class _HorizontalCalendarState extends State<HorizontalCalendar> {
                                         widget.startDate.add(Duration(days: x));
                                     date = new DateTime(
                                         _date.year, _date.month, _date.day);
-
                                     bool isDeactivated = false;
-
                                     // check if this date needs to be deactivated for only DeactivatedDates
                                     if (widget.inactiveDates != null) {
-//            print("Inside Inactive dates.");
                                       for (DateTime inactiveDate
                                           in widget.inactiveDates!) {
                                         if (_compareDate(date, inactiveDate)) {
@@ -144,7 +139,6 @@ class _HorizontalCalendarState extends State<HorizontalCalendar> {
                                         }
                                       }
                                     }
-
                                     // check if this date needs to be deactivated for only ActivatedDates
                                     if (widget.activeDates != null) {
                                       isDeactivated = true;

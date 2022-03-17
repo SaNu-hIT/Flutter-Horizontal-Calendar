@@ -24,7 +24,7 @@ Use this package as a library
 
 ```
 dependencies:
-     horizontalcalender: ^0.0.2
+     horizontalcalender: ^0.0.4
 ```
 
 

@@ -11,3 +11,8 @@
 
 * More examples and documentation
 
+## 0.0.4 - Release
+
+* Update Package Structure
+*
+
